@@ -6,8 +6,6 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { RouterModule } from '@angular/router';
 import { FlexModule } from '@angular/flex-layout';
 
-
-
 @NgModule({
   declarations: [
     FooterComponent,
