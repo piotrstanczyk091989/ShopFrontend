@@ -23,10 +23,10 @@ import { FormGroup } from "@angular/forms";
             <input matInput placeholder="Podaj URL" formControlName="slug">
             <div *ngIf="slug?.invalid && (slug?.dirty || slug?.touched)" class="erroMessages">
                 <div *ngIf="slug?.errors?.['required']">
-                    Nazwa jest wymagana
+                    Slug jest wymagana
                 </div>
                 <div *ngIf="slug?.errors?.['minlength']">
-                    Nazwa musi mieć przynajmniej 4 znaki
+                    Slug musi mieć przynajmniej 4 znaki
                 </div>
             </div>
         </mat-form-field>
@@ -42,6 +42,12 @@ import { FormGroup } from "@angular/forms";
                     Opis musi mieć przynajmniej 4 znaki
                 </div>
             </div>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Pełny opis</mat-label>
+            <textarea matInput rows="40" placeholder="Podaj pełny opis produktu" 
+            formControlName="fullDescription"></textarea>
         </mat-form-field>
 
         <mat-form-field appearance="fill">
@@ -85,7 +91,7 @@ import { FormGroup } from "@angular/forms";
         </div>
     </div>`,
 
-styles: [`
+    styles: [`
     .erroMessages{
         color:red;
     }`]
@@ -119,6 +125,10 @@ export class AdminProductFormComponent implements OnInit {
     }
     get slug() {
         return this.parentForm.get("slug");
+    }
+
+    get slfullDescriptionug() {
+        return this.parentForm.get("fullDescription");
     }
 
 }
