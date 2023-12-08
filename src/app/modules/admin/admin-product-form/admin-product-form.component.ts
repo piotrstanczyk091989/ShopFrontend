@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from "@angular/core";
 import { FormGroup } from "@angular/forms";
+import { AdminCategoryNameDto } from "./adminCategoryNameDto";
+import { FormCategoryService } from "./form-category.service";
 
 @Component({
     selector: 'app-admin-product-form',
@@ -19,8 +21,8 @@ import { FormGroup } from "@angular/forms";
         </mat-form-field>
 
         <mat-form-field appearance="fill">
-            <mat-label>Przyjazny URL</mat-label>
-            <input matInput placeholder="Podaj URL" formControlName="slug">
+            <mat-label>Przyjazny url</mat-label>
+            <input matInput placeholder="Podaj url" formControlName="slug">
             <div *ngIf="slug?.invalid && (slug?.dirty || slug?.touched)" class="erroMessages">
                 <div *ngIf="slug?.errors?.['required']">
                     Slug jest wymagana
@@ -51,14 +53,15 @@ import { FormGroup } from "@angular/forms";
         </mat-form-field>
 
         <mat-form-field appearance="fill">
-            <mat-label>Kategorie</mat-label>
-            <input matInput placeholder="Podaj kategorie produktu" formControlName="category">
-            <div *ngIf="category?.invalid && (category?.dirty || category?.touched)" class="erroMessages">
-                <div *ngIf="category?.errors?.['required']">
+            <mat-label>Kategoria</mat-label>
+            <mat-select formControlName="categoryId">
+                <mat-option *ngFor="let el of categories" [value]="el.id">
+                {{el.name}}
+                </mat-option>                
+            </mat-select>
+            <div *ngIf="categoryId?.invalid && (categoryId?.dirty || categoryId?.touched)" class="erroMessages">
+                <div *ngIf="categoryId?.errors?.['required']">
                     Kategoria jest wymagana
-                </div>
-                <div *ngIf="category?.errors?.['minlength']">
-                    Kategoria musi mieć przynajmniej 4 znaki
                 </div>
             </div>
         </mat-form-field>
@@ -78,7 +81,7 @@ import { FormGroup } from "@angular/forms";
 
         <mat-form-field appearance="fill">
             <mat-label>Waluta</mat-label>
-            <input matInput placeholder="Podaj walutę produktu" formControlName="currency">
+            <input matInput placeholder="Podaj walutę" formControlName="currency">
             <div *ngIf="currency?.invalid && (currency?.dirty || currency?.touched)" class="erroMessages">
                 <div *ngIf="currency?.errors?.['required']">
                     Waluta jest wymagana
@@ -100,9 +103,19 @@ import { FormGroup } from "@angular/forms";
 export class AdminProductFormComponent implements OnInit {
 
     @Input() parentForm!: FormGroup;
+    categories: Array<AdminCategoryNameDto> = [];
+
+    constructor(private formCategoryService: FormCategoryService){
+
+    }
 
     ngOnInit(): void {
+        this.getCategories();
+    }
 
+    getCategories(){
+        this.formCategoryService.getCategories()
+        .subscribe(categories => this.categories = categories);
     }
 
     get name() {
@@ -113,8 +126,8 @@ export class AdminProductFormComponent implements OnInit {
         return this.parentForm.get("description");
     }
 
-    get category() {
-        return this.parentForm.get("category");
+    get categoryId() {
+        return this.parentForm.get("categoryId");
     }
 
     get price() {
