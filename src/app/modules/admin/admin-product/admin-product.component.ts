@@ -13,9 +13,9 @@ import { MatTable } from '@angular/material/table';
 })
 export class AdminProductComponent implements AfterViewInit {
 
-  //dataSource: AdminProduct[] = [];
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatTable) table!: MatTable<any>;
+  
   displayedColumns: string[] = ["image", "id", "name", "price", "actions"];
   totalElements: number = 0;
   data: AdminProduct[] = [];
