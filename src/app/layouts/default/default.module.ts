@@ -7,13 +7,15 @@ import { ProductComponent } from 'src/app/modules/product/product.component';
 import { HomeComponent } from 'src/app/modules/home/home.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { ProductDetailsComponent } from 'src/app/modules/product-details/product-details.component';
+import { CategoryComponent } from 'src/app/modules/category/category.component';
 
 @NgModule({
   declarations: [
     DefaultComponent,
     HomeComponent,
     ProductComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    CategoryComponent
   ],
   imports: [
     CommonModule,
