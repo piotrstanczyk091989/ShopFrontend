@@ -15,7 +15,7 @@
             <div fxLayout="row" fxFlexAlign="end">
             </div>
                 <span class="price">{{product?.price}} {{product?.currency}}</span>
-            <button mat-flat-button color="warn">Do koszyka</button>
+            <button mat-flat-button color="warn" routerLink="/cart" [queryParams]="{productId: product?.id}">Do koszyka</button>
         </div>
     </div>
     <div class="fullDescription">

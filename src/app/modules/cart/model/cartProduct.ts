@@ -1,8 +1,6 @@
-export interface Product {
+export interface CartProduct{
     id: number,
     name: string,
-    category: string,
-    description: string,
     price: number,
     currency: string,
     image: string,
