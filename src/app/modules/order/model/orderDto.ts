@@ -7,6 +7,5 @@ export interface OrderDto{
     email: string,
     phone: string,
     cartId: number,
-    shipmentId: number,
-    paymentId:  number
+    shipmentId: number
 }
