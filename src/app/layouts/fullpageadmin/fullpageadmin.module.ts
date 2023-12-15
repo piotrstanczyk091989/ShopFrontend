@@ -17,6 +17,8 @@ import { AdminCategoryAddComponent } from 'src/app/modules/admin/admin-category/
 import { AdminCategoryUpdateComponent } from 'src/app/modules/admin/admin-category/admin-category-update/admin-category-update.component';
 import { AdminCategoryFormComponent } from 'src/app/modules/admin/admin-category/admin-category-form/admin-category-form.component';
 import { AdminReviewComponent } from 'src/app/modules/admin/admin-review/admin-review.component';
+import { AdminOrderComponent } from 'src/app/modules/admin/admin-order/admin-order.component';
+import { AdminOrderUpdateComponent } from 'src/app/modules/admin/admin-order/admin-order-update/admin-order-update.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { AdminReviewComponent } from 'src/app/modules/admin/admin-review/admin-r
     AdminCategoryAddComponent,
     AdminCategoryUpdateComponent,
     AdminCategoryFormComponent,
-    AdminReviewComponent
+    AdminReviewComponent,
+    AdminOrderUpdateComponent,
+    AdminOrderComponent,
   ],
   imports: [
     CommonModule,
