@@ -9,6 +9,7 @@ import { FullpageadminModule } from './layouts/fullpageadmin/fullpageadmin.modul
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
+import { AdminOrderExportComponent } from './modules/admin/admin-order/admin-order-export/admin-order-export.component';
 
 @NgModule({
   declarations: [
