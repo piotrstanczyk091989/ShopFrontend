@@ -35,8 +35,8 @@ import { AdminOrderUpdateComponent } from 'src/app/modules/admin/admin-order/adm
     AdminCategoryUpdateComponent,
     AdminCategoryFormComponent,
     AdminReviewComponent,
-    AdminOrderUpdateComponent,
     AdminOrderComponent,
+    AdminOrderUpdateComponent
   ],
   imports: [
     CommonModule,

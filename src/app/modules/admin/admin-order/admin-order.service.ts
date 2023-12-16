@@ -18,4 +18,13 @@ export class AdminOrderService {
   getOrder(id: number): Observable<AdminOrder> {
     return this.http.get<AdminOrder>("/api/admin/orders/" + id);
   }
+
+  saveStatus(id: number, value: any): Observable<void> {
+    return this.http.patch<void>("/api/admin/orders/" + id, value)
+  }
+
+  getInitData(): Observable<any> {
+    return this.http.get<any>("/api/admin/orders/initData");
+  }
+
 }

@@ -46,15 +46,15 @@ const routes: Routes = [
       { path: 'admin/categories', component: AdminCategoryComponent },
       { path: 'admin/categories/update/:id', component: AdminCategoryUpdateComponent },
       { path: 'admin/categories/add', component: AdminCategoryAddComponent },
-      { path: 'admin/reviews', component: AdminReviewComponent},
-      {path: 'admin/orders', component: AdminOrderComponent},
-      {path: 'admin/orders/update/:id', component: AdminOrderUpdateComponent },
+      { path: 'admin/reviews', component: AdminReviewComponent },
+      { path: 'admin/orders', component: AdminOrderComponent },
+      { path: 'admin/orders/update/:id', component: AdminOrderUpdateComponent },
     ]
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'})],
+  imports: [RouterModule.forRoot(routes, { onSameUrlNavigation: 'reload' })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
