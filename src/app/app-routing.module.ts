@@ -24,8 +24,9 @@ import { AdminOrderExportComponent } from './modules/admin/admin-order/admin-ord
 import { AdminOrderStatsComponent } from './modules/admin/admin-order/admin-order-stats/admin-order-stats.component';
 import { AdminLoginComponent } from './modules/admin/admin-login/admin-login.component';
 import { FullpageadminemptyComponent } from './layouts/fullpageadminempty/fullpageadminempty.component';
-import { AdminAuthorizeGuard } from './modules/common/guard/adminAuthorizeGuard';
+import { AdminAuthorizeGuard } from './modules/admin/common/guard/adminAuthorizeGuard';
 import { ProfileComponent } from './modules/profile/profile.component';
+import { ProfileAuthorizeGuard } from './modules/common/guard/profileAuthorizeGuard';
 
 const routes: Routes = [
   {
@@ -36,7 +37,7 @@ const routes: Routes = [
       { path: 'categories/:slug', component: CategoryComponent },
       { path: 'cart', component: CartComponent },
       { path: 'order', component: OrderComponent },
-      { path: 'profile', component: ProfileComponent },
+      { path: 'profile', component: ProfileComponent, canActivate: [ProfileAuthorizeGuard]},
     ]
   },
   {
